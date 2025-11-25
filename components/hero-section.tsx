@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { montserrat, montserratAlternates } from "@/app/layout" // adjust path
 
 export default function HeroSection() {
   const containerVariants = {
@@ -36,7 +37,7 @@ export default function HeroSection() {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+          className={`${montserratAlternates.variable} text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight`}
           style={{ color: "#1a237e" }}
         >
           A Fresh Start.

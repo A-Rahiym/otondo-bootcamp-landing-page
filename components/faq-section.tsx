@@ -53,7 +53,7 @@ export default function FaqSection() {
                   {faq.question}
                 </h3>
                 <ChevronDown
-                  className="w-5 h-5 flex-shrink-0 transition-transform"
+                  className="w-5 h-5 shrink-0 transition-transform"
                   style={{
                     color: "#1a237e",
                     transform: expandedIndex === index ? "rotate(180deg)" : "rotate(0deg)",

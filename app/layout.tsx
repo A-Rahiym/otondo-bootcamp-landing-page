@@ -1,42 +1,42 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Analytics } from "@vercel/analytics/next"
-import { Geist, Geist_Mono, Montserrat } from "next/font/google"
-import localFont from "next/font/local"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
 
-// Google Fonts
-const geist = Geist({ subsets: ["latin"] })
-const geistMono = Geist_Mono({ subsets: ["latin"] })
+// // Google Fonts
+// const geist = Geist({ subsets: ["latin"] })
+// const geistMono = Geist_Mono({ subsets: ["latin"] })
 
-const montserrat = Montserrat({
+export const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sans",        // used for general text
+  variable: "--font-sans", // used for general text
   display: "swap",
-})
+});
 
 // Local Font: Montserrat Alternates
-const montserratAlternates = localFont({
+export const montserratAlternates = localFont({
   src: [
     {
       path: "../public/fonts/MontserratAlternates-Medium.ttf",
       weight: "400",
-      style: "normal",
+      style: "medium",
     },
     {
       path: "../public/fonts/MontserratAlternates-Bold.ttf",
       weight: "700",
-      style: "normal",
+      style: "bold",
     },
   ],
-  variable: "--font-heading",     // used for headings
+  variable: "--font-heading", // used for headings
   display: "swap",
-})
+});
 
 // -------------------------
 // SITE METADATA
 // -------------------------
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Otondo Bootcamp - A Fresh Start for Your Tech Career",
   description:
     "Join Otondo Bootcamp for an intensive, multi-track coding bootcamp designed to give you practical skills and support for a successful tech journey.",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 // -------------------------
 // ROOT LAYOUT
@@ -63,20 +63,21 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body
         className={`
-          antialiased
-          ${montserrat.variable}
-          ${montserratAlternates.variable}
-        `}
+    antialiased
+    ${montserratAlternates.variable}
+    ${montserrat.variable}
+  `}
+        style={{ fontFamily: "var(--font-heading)" }} // ensures Montserrat is used
       >
         {children}
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

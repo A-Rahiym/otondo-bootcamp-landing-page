@@ -56,7 +56,7 @@ export default function ProgramDetailsSection() {
                     viewport={{ once: true }}
                     className="flex gap-3 items-start"
                   >
-                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-5 h-5 shrink-0 mt-1" />
                     <span>{detail}</span>
                   </motion.li>
                 ))}
