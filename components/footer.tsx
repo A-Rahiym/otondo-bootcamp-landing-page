@@ -28,9 +28,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Blog
-                </a>
+
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
@@ -62,14 +60,14 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex gap-2">
-                <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-white transition-colors">
-                  +1 (234) 567-8900
+                <Phone className="w-5 h-5 shrink-0" />
+                <a href="tel:+2348140556905" className="hover:text-white transition-colors">
+                    +234 8140 556 905
                 </a>
               </li>
               <li className="flex gap-2">
-                <MapPin className="w-5 h-5 flex-shrink-0" />
-                <span>Lagos, Nigeria</span>
+                <MapPin className="w-5 h-5 shrink-0" />
+                <span>Kaduna, Nigeria</span>
               </li>
             </ul>
           </div>
