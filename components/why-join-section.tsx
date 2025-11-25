@@ -1,87 +1,92 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { BookOpen, Users, Trophy, BarChart3, Target, Clock } from "lucide-react"
-import Image from "next/image";
-const reasons = [
-  {
-    icon: BookOpen,
-    title: "Expert Instructors",
-    description: "Learn from industry professionals with years of experience",
-  },
-  {
-    icon: Users,
-    title: "Supportive Community",
-    description: "Build lasting connections with fellow developers",
-  },
-  {
-    icon: Trophy,
-    title: "Real-World Projects",
-    description: "Work on live projects that boost your portfolio",
-  },
-  {
-    icon: BarChart3,
-    title: "Career Support",
-    description: "Dedicated job placement and career guidance",
-  },
-  {
-    icon: Target,
-    title: "Flexible Pacing",
-    description: "Learn at your own pace with mentorship support",
-  },
-  {
-    icon: Clock,
-    title: "Lifetime Access",
-    description: "Keep learning with lifetime course access",
-  },
-]
+import Image from "next/image"
 
 export default function WhyJoinSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 otondo-blue-section">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0EA5E9] to-[#38BDF8] py-16 md:py-24">
+      {/* TOP WHITE CURVE */}
+      <svg
+        className="absolute top-0 left-0 w-full rotate-180"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+        style={{ height: "80px", width: "100%" }}
+      >
+        <path
+          fill="#F4F4F4"
+          d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        />
+      </svg>
+
+      {/* BOTTOM WHITE CURVE */}
+      <svg
+        className="absolute bottom-0 left-0 w-full"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+        style={{ height: "80px", width: "100%" }}
+      >
+        <path
+          fill="#F4F4F4"
+          d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        />
+      </svg>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* MOBILE: Image first → DESKTOP: Image second */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center order-1 lg:order-2"
+          >
+            <Image
+              src="/image_1.png"
+              alt="Otondo Bootcamp student"
+              width={650}
+              height={650}
+              className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl drop-shadow-2xl object-contain"
+              priority
+            />
+          </motion.div>
+
+          {/* Text Content - comes after image on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
+            className="order-2 lg:order-1 text-center lg:text-left"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">WHY JOIN THE OTONDO BOOTCAMP</h2>
-            <div className="space-y-4">
-              {reasons.slice(0, 3).map((reason, index) => {
-                const Icon = reason.icon
-                return (
-                  <div key={index} className="flex gap-4 items-start">
-                    <div className="shrink-0 mt-1">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-white">{reason.title}</h3>
-                      <p className="text-blue-100 text-sm">{reason.description}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </motion.div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
+              WHY JOIN THE OTONDO BOOTCAMP
+            </h2>
 
-          {/* Right Visual Placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <Image
-            src={'/image_1.png'}
-            alt="Bootcamp instructor"
-            width={400}
-            height={400}
-            className="w-lg h-lg object-cover"
-            />
+            <div className="bg-yellow-400 p-5 sm:p-6 rounded-lg mb-10 shadow-xl mx-auto lg:mx-0 max-w-2xl">
+              <p className="text-lg sm:text-xl font-medium text-gray-900 leading-relaxed">
+                Because You Deserve A Structured And Supportive Learning Environment Built For Growth—Not Pressure.
+                <br className="hidden sm:block" />
+                Learn With Clarity, Practice With Guidance, And Grow With Accountability.
+              </p>
+            </div>
+
+            <ul className="space-y-4 text-white text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+              {[
+                "Expert instructor-led training",
+                "Weekly structured curriculum",
+                "Practical, hands-on projects",
+                "Weekly accountability & feedback",
+                "Mentorship + peer learning community",
+                "DSHub Certificate of completion",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-1.5 w-2.5 h-2.5 bg-white rounded-full shrink-0" />
+                  <span className="text-left">{item}</span>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </div>
       </div>

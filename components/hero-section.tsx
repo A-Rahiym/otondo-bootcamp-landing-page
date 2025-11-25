@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { montserrat, montserratAlternates } from "@/app/layout" // adjust path
+import { motion } from "framer-motion";
+import { montserrat, montserratAlternates } from "@/app/layout";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -13,7 +13,7 @@ export default function HeroSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -22,15 +22,19 @@ export default function HeroSection() {
       y: 0,
       transition: { duration: 0.8, ease: [0.2, 0.9, 0.2, 1] },
     },
-  }
+  };
 
   return (
-    <section
-      className="min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: "#f5f5f5" }}
-    >
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 w-full h-full">
+      {/* Background image */}
+      <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat z-0" />
+
+      {/* Overlay with 20% opacity */}
+      <div className="absolute inset-0 bg-[#F4F4F4] opacity-95 z-10" />
+
+      {/* Content */}
       <motion.div
-        className="max-w-4xl w-full text-center"
+        className="relative z-20 max-w-4xl w-full text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -38,34 +42,44 @@ export default function HeroSection() {
         <motion.h1
           variants={itemVariants}
           className={`${montserratAlternates.variable} text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight`}
-          style={{ color: "#1a237e" }}
+          style={{ color: "#1a237e", fontFamily: "var(--font-heading)" }}
         >
           A Fresh Start.
         </motion.h1>
+
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-          style={{ color: "#1a237e" }}
+          className={`${montserratAlternates.variable} text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight`}
+          style={{ color: "#1a237e", fontFamily: "var(--font-heading)" }}
         >
           A Second Chance.
         </motion.h1>
+
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 leading-tight"
-          style={{ color: "#4db8ff" }}
+          className={`${montserratAlternates.variable} text-5xl md:text-6xl lg:text-7xl font-bold mb-12 leading-tight`}
+          style={{ color: "#4db8ff", fontFamily: "var(--font-heading)" }}
         >
           A Bigger Opportunity.
         </motion.h1>
 
-        <motion.p variants={itemVariants} className="text-xl md:text-2xl mb-12 text-gray-700 max-w-3xl mx-auto">
-          It all works together. We're multi-track coding bootcamp designed to give you structure, support,
-          accountability, and confidence—your tech journey with the Otondo bootcamp.
+        <motion.p
+          variants={itemVariants}
+          className={`${montserrat.variable} text-xl md:text-2xl mb-12 text-gray-700 max-w-3xl mx-auto`}
+          style={{ fontFamily: "var(--font-sans)" }}
+        >
+          It all works together. We're a multi-track coding bootcamp designed to
+          give you structure, support, accountability, and confidence—your tech
+          journey with the Otondo bootcamp.
         </motion.p>
 
-        <motion.button variants={itemVariants} className="otondo-primary-btn text-lg px-8 py-3">
+        <motion.button
+          variants={itemVariants}
+          className="otondo-primary-btn text-lg px-8 py-3"
+        >
           Register Now
         </motion.button>
       </motion.div>
     </section>
-  )
+  );
 }

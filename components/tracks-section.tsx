@@ -1,126 +1,85 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState, useRef, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const tracks = [
-  {
-    id: 1,
-    title: "Machine Learning",
-    duration: "Course Duration: 2hr 30 min",
-    image: "url('/images/frame-2030.png')",
-  },
-  {
-    id: 2,
-    title: "Data Science",
-    duration: "Course Duration: 2hr 30 min",
-    image: "url('/images/frame-2030.png')",
-  },
-  {
-    id: 3,
-    title: "Graphic Design",
-    duration: "Course Duration: 2hr 30 min",
-    image: "url('/images/frame-2030.png')",
-  },
-  {
-    id: 4,
-    title: "AI / Machine Learning",
-    duration: "Course Duration: 2hr 30 min",
-    image: "url('/images/frame-2030.png')",
-  },
-  {
-    id: 5,
-    title: "Content Creation",
-    duration: "Course Duration: 2hr 30 min",
-    image: "url('/images/frame-2030.png')",
-  },
-  {
-    id: 6,
-    title: "Full-Stack Development",
-    duration: "Course Duration: 2hr 30 min",
-    image: "url('/images/frame-2030.png')",
-  },
+  { id: 1, title: "Machine Learning", duration: "Course Duration: 2hr 30 min" },
+  { id: 2, title: "Data Science", duration: "Course Duration: 2hr 30 min" },
+  { id: 3, title: "Graphic Design", duration: "Course Duration: 2hr 30 min" },
+  { id: 4, title: "AI / Machine Learning", duration: "Course Duration: 2hr 30 min" },
+  { id: 5, title: "Content Creation", duration: "Course Duration: 2hr 30 min" },
+  { id: 6, title: "Full-Stack Development", duration: "Course Duration: 2hr 30 min" },
+  { id: 7, title: "UI/UX Design", duration: "Course Duration: 2hr 30 min" },
+  { id: 8, title: "Digital Marketing", duration: "Course Duration: 2hr 30 min" },
+  { id: 9, title: "Cybersecurity", duration: "Course Duration: 2hr 30 min" },
 ]
 
+const duplicatedTracks = [...tracks, ...tracks, ...tracks]
+
 export default function TracksSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const scrollRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % tracks.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-    if (scrollRef.current) {
-      const cardWidth = 320 + 24 // card width + gap
-      scrollRef.current.scrollLeft = currentIndex * cardWidth
-    }
-  }, [currentIndex])
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + tracks.length) % tracks.length)
-  }
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % tracks.length)
-  }
-
   return (
-    <section id="tracks" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12 flex items-center justify-between">
-          <h2 className="otondo-section-title">CHOOSE YOUR TRACK</h2>
-          <div className="bg-yellow-300 text-gray-900 px-6 py-3 rounded-lg font-semibold text-lg">
-            Train in one of nine beginner-friendly tracks
-          </div>
-        </div>
+    <section className="relative bg-[#0EA5E9] overflow-hidden">
+      {/* Top Curve */}
+      <svg className="absolute top-0 left-0 w-full" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path fill="#F4F4F4" d="M0,0 L0,100 Q720,200 1440,100 L1440,0 Z" />
+      </svg>
 
-        <div className="relative">
-          <div ref={scrollRef} className="flex gap-6 overflow-x-hidden scroll-smooth pb-8">
-            {tracks.map((track) => (
-              <motion.div
-                key={track.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex-shrink-0 w-80 bg-white rounded-xl border-2 border-blue-300 overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src={`/.jpg?key=puf9f&height=192&width=320&query=${track.title} course illustration`}
-                  alt={track.title}
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2" style={{ color: "#1a237e" }}>
-                    {track.title}
-                  </h3>
-                  <p className="text-sm" style={{ color: "#4db8ff" }}>
-                    {track.duration}
-                  </p>
+      {/* Bottom Curve */}
+      <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path fill="#F4F4F4" d="M0,200 L0,100 Q720,0 1440,100 L1440,200 Z" />
+      </svg>
+
+      <div className="relative pt-24 pb-32 md:pt-32 md:pb-40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F4F4F4] leading-tight">
+              CHOOSE YOUR TRACK
+            </h2>
+            <div className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold text-lg shadow-md">
+              Train in one of nine beginner-friendly tracks
+            </div>
+          </div>
+
+          {/* Infinite Carousel - Slides only inside container */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              animate={{ x: [0, -1080] }} // Move exactly the width of 3.5–4 cards (≈1080px)
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 45,
+                  ease: "linear",
+                },
+              }}
+              className="flex gap-6 md:gap-8 mt-1.5"
+            >
+              {duplicatedTracks.map((track, index) => (
+                <div
+                  key={`${track.id}-${index}`}
+                  className="shrink-0 w-[230px] sm:w-[250px] md:w-[290px]"
+                >
+                  <div className="group bg-white rounded-2xl border-4 border-[#1a237e] overflow-hidden transition-all duration-300 hover:-translate-y-4">
+                    <div className="h-56 bg-[#E0F2FE] flex items-center justify-center border-b-4 border-[#1a237e]/10">
+                      <span className="text-6xl font-bold text-[#1a237e] opacity-30">
+                        {track.title.split(" ")[0]}
+                      </span>
+                    </div>
+
+                    <div className="p-6 bg-white">
+                      <h3 className="text-2xl font-bold text-[#1a237e] mb-2">
+                        {track.title}
+                      </h3>
+                      <p className="text-[#1a237e]/70 font-medium">
+                        {track.duration}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </div>
-
-          <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-blue-400 hover:bg-blue-500 text-white p-2 rounded-full transition-colors"
-            aria-label="Previous track"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-blue-400 hover:bg-blue-500 text-white p-2 rounded-full transition-colors"
-            aria-label="Next track"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
         </div>
       </div>
     </section>
