@@ -1,76 +1,81 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown } from "lucide-react"
-
-const faqs = [
-  {
-    question: "What is the Otondo Bootcamp all about?",
-    answer:
-      "The Otondo Bootcamp is an intensive, multi-track coding bootcamp designed to give you practical skills, support, and confidence in your tech career journey. We offer flexible learning with expert mentorship.",
-  },
-  {
-    question: "Is the bootcamp suitable for complete beginners?",
-    answer:
-      "Yes! Our bootcamp is designed for people at all levels, from complete beginners to those with some experience looking to upskill or transition into tech.",
-  },
-  {
-    question: "How long is the bootcamp program?",
-    answer:
-      "Program length varies by track. Full-Stack Development is 16 weeks, UI/UX Design is 12 weeks, Mobile Development is 14 weeks, and Data & Analytics is 14 weeks.",
-  },
-  {
-    question: "Do I need any prior experience?",
-    answer:
-      "No prior coding experience is required, but a strong motivation to learn and commitment to the program are essential. We provide all foundational knowledge needed.",
-  },
-]
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { faqs } from "@/data/data";
 
 export default function FaqSection() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="otondo-section-title">Frequently Asked Questions</h2>
+      <div className="max-w-7xl mx-auto">
+        {/* Header + Image */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center mb-16">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1a237e] mb-6">
+              Frequently asked questions
+            </h2>
+          </div>
+          <div className="flex justify-center lg:justify-center">
+            <Image
+              src={"/question.png"}
+              alt="Question mark"
+              width={200}
+              height={200}
+              className="drop-shadow-2xl"
+            />
+          </div>
+        </div>
 
-        <div className="space-y-4">
+        {/* FAQ List – two columns on lg+ */}
+        <div className="grid lg:grid-cols-2 gap-8">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="border border-gray-300 rounded-lg overflow-hidden"
-              initial={{ opacity: 0, y: 10 }}
+              className="bg-white"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
+              {/* Orange bullet + Question */}
               <button
-                onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+                onClick={() =>
+                  setExpandedIndex(expandedIndex === index ? null : index)
+                }
+                className="w-full flex items-start gap-4 text-left group hover:bg-gray-50 rounded-lg p-4 -m-4 transition-colors"
               >
-                <h3 className="text-lg font-semibold text-left" style={{ color: "#1a237e" }}>
-                  {faq.question}
-                </h3>
+                <span className="mt-1.5 w-3 h-3 bg-orange-500 rounded-full flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-gray-900 group-hover:text-[#1a237e] transition-colors">
+                    {faq.question}
+                  </h3>
+                </div>
                 <ChevronDown
-                  className="w-5 h-5 shrink-0 transition-transform"
-                  style={{
-                    color: "#1a237e",
-                    transform: expandedIndex === index ? "rotate(180deg)" : "rotate(0deg)",
-                  }}
+                  className={`w-5 h-5 text-[#1a237e] flex-shrink-0 transition-transform duration-300 ${
+                    expandedIndex === index ? "rotate-180" : ""
+                  }`}
                 />
               </button>
 
+              {/* Answer */}
               <AnimatePresence>
                 {expandedIndex === index && (
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6 border-t border-gray-200 bg-gray-50"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
                   >
-                    <p className="text-gray-700">{faq.answer}</p>
+                    <div className="pl-7 pr-12 pt-4 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -79,5 +84,5 @@ export default function FaqSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

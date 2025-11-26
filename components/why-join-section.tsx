@@ -5,20 +5,7 @@ import Image from "next/image"
 
 export default function WhyJoinSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0EA5E9] to-[#38BDF8] py-16 md:py-24">
-      {/* TOP WHITE CURVE */}
-      <svg
-        className="absolute top-0 left-0 w-full rotate-180"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-        style={{ height: "80px", width: "100%" }}
-      >
-        <path
-          fill="#F4F4F4"
-          d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        />
-      </svg>
-
+    <section className="relative overflow-hidden bg-[#0EA5E9] py-16 md:py-24" id="about">
       {/* BOTTOM WHITE CURVE */}
       <svg
         className="absolute bottom-0 left-0 w-full"
@@ -60,15 +47,13 @@ export default function WhyJoinSection() {
             viewport={{ once: true }}
             className="order-2 lg:order-1 text-center lg:text-left"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold  leading-tight mb-8 text-[#F4F4F4]">
               WHY JOIN THE OTONDO BOOTCAMP
             </h2>
 
-            <div className="bg-yellow-400 p-5 sm:p-6 rounded-lg mb-10 shadow-xl mx-auto lg:mx-0 max-w-2xl">
+            <div className="bg-yellow-400 p-2 sm:p-6  mb-5 mx-auto lg:mx-0 max-w-2xl">
               <p className="text-lg sm:text-xl font-medium text-gray-900 leading-relaxed">
-                Because You Deserve A Structured And Supportive Learning Environment Built For Growth—Not Pressure.
-                <br className="hidden sm:block" />
-                Learn With Clarity, Practice With Guidance, And Grow With Accountability.
+                Learn clearly, practice with guidance, and grow in a supportive, pressure-free environment.
               </p>
             </div>
 

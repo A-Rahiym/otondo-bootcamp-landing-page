@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { montserrat, montserratAlternates } from "@/app/layout";
 
@@ -25,7 +24,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 w-full h-full">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 w-full h-full" id="hero">
       {/* Background image */}
       <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat z-0" />
 

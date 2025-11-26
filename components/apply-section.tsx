@@ -34,8 +34,8 @@ export default function ApplySection() {
                 success.
               </p>
 
-              <button className="otondo-primary-btn py-4 px-8 text-lg font-semibold w-full md:w-auto text-center">
-                Register Now
+              <button className="otondo-primary-btn py-4 px-8 text-lg font-medium w-full md:w-auto text-center">
+                Apply Now
               </button>
             </div>
           </div>

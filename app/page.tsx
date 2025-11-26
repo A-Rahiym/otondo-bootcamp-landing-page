@@ -11,7 +11,7 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#F4F4F4]">
       <Navigation />
       <HeroSection />
       <WhyJoinSection />

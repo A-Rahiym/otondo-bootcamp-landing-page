@@ -9,8 +9,8 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#" },
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
     { label: "Tracks", href: "#tracks" },
     { label: "Program Details", href: "#program" },
     { label: "Process", href: "#process" },
@@ -22,14 +22,15 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Image
-            src={"/Logo.png"}
+            src={"/LogoxMonogram.png"}
             alt={"Otondo Bootcamp Logo"}
-            width={150}
-            height={50}
+            width={200}
+            height={100}
             priority
           />
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+
+          {/* Desktop Navigation - Changed from md: to lg: */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -41,13 +42,13 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden md:block">
-            <button className="otondo-primary-btn">Apply Now</button>
+          {/* Desktop CTA Button - Changed from md: to lg: */}
+          <div className="hidden lg:block">
+            <button className="otondo-primary-btn font-medium ">Apply Now</button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Button - Now shows on <lg (below 1024px) */}
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-gray-900"
@@ -57,9 +58,9 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Shows on <lg */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200">
+          <div className="lg:hidden pb-4 border-t border-gray-200">
             <div className="flex flex-col gap-4 py-4">
               {navLinks.map((link) => (
                 <Link
