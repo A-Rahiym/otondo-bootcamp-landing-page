@@ -24,7 +24,10 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 w-full h-full" id="hero">
+    <section
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 w-full h-full"
+      id="hero"
+    >
       {/* Background image */}
       <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat z-0" />
 
@@ -72,12 +75,18 @@ export default function HeroSection() {
           journey with the Otondo bootcamp.
         </motion.p>
 
-        <motion.button
-          variants={itemVariants}
-          className="otondo-primary-btn text-lg px-8 py-3"
+        <a
+          href="https://forms.gle/uqiG59Myzw9aa6GGA"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Register Now
-        </motion.button>
+          <motion.button
+            variants={itemVariants}
+            className="otondo-primary-btn text-lg px-8 py-3"
+          >
+            Apply Now
+          </motion.button>
+        </a>
       </motion.div>
     </section>
   );

@@ -46,7 +46,7 @@ export default function TracksSection() {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 10,
                   ease: "linear",
                 },
               }}
