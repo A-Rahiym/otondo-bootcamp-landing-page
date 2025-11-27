@@ -71,7 +71,7 @@ export default function HeroSection() {
           style={{ fontFamily: "var(--font-sans)" }}
         >
           It all works together. We're a multi-track coding bootcamp designed to
-          give you structure, support, accountability, and confidence—your tech
+          give you structure, support, accountability, and confidence. Your tech
           journey with the Otondo bootcamp.
         </motion.p>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
         >
           <motion.button
             variants={itemVariants}
-            className="otondo-primary-btn text-lg px-8 py-3"
+            className="otondo-primary-btn text-lg px-8 py-3 rounded-none"
           >
             Apply Now
           </motion.button>

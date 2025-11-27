@@ -1,39 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { steps } from "@/data/data"
 
-const steps = [
-  {
-    number: "1",
-    title: "Fill the application form",
-    description: "with your name, email, phone, and preferred track",
-  },
-  {
-    number: "2",
-    title: "Fill the application form",
-    description: "with your name, email, phone, and preferred track",
-  },
-  {
-    number: "3",
-    title: "Confirm your communication",
-    description: "details for our team to reach out to you",
-  },
-  {
-    number: "4",
-    title: "Submit & receive confirmation",
-    description: "Email with next steps",
-  },
-  {
-    number: "5",
-    title: "Screening & selection based on",
-    description: "motivations and technical aptitude",
-  },
-  {
-    number: "6",
-    title: "Onboarding receive orientation",
-    description: "date + class access",
-  },
-]
+
 
 export default function ProcessSection() {
   return (

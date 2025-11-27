@@ -2,7 +2,6 @@
 import { FaQuoteLeft } from "react-icons/fa"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import { testimonials } from "@/data/data"
 
 export default function TestimonialsSection() {
@@ -50,15 +49,15 @@ export default function TestimonialsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="shrink-0 w-72 bg-blue-400 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="shrink-0 w-72 bg-[#0EA5E9] overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="p-6 min-h-64 flex flex-col justify-between">
                   <div>
-                    <FaQuoteLeft className="text-3xl text-white/50 mb-4 w-auto shrink-0" />
+                    <FaQuoteLeft className="text-3xl text-[#1a237e] mb-4 w-auto shrink-0" />
                     <p className="text-white italic leading-relaxed text-sm mb-6">{testimonial.quote}</p>
                   </div>
                   <div className="pt-4 border-t border-blue-300 mt-auto">
-                    <div className="h-16 bg-gray-900 rounded flex items-center justify-center">
+                    <div className="h-16 bg-[#1a237e]  flex items-center justify-center">
                       <p className="text-white font-semibold text-center text-sm">{testimonial.author}</p>
                     </div>
                   </div>

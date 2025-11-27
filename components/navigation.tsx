@@ -18,7 +18,7 @@ export default function Navigation() {
 
   return (
     <nav className="otondo-nav sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-1 lg:px-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-1 lg:px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Image
@@ -45,7 +45,7 @@ export default function Navigation() {
           {/* Desktop CTA Button - Changed from md: to lg: */}
           <div className="hidden lg:block">
             <Link href="https://forms.gle/uqiG59Myzw9aa6GGA" target="_blank">
-              <span className="otondo-primary-btn font-medium">Apply Now</span>
+              <span className="otondo-primary-btn font-medium rounded-none ">Apply Now</span>
             </Link>
           </div>
 

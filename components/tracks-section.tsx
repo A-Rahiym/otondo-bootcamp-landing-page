@@ -9,7 +9,7 @@ const duplicatedTracks = [...tracks, ...tracks, ...tracks];
 export default function TracksSection() {
   return (
     <section className="relative bg-[#0EA5E9] overflow-hidden" id="tracks">
-      {/* Bottom Wave Curve */}
+      {console.log(duplicatedTracks.length)}
       <svg
         className="absolute bottom-0 left-0 w-full h-48 md:h-64"
         viewBox="0 0 1440 320"
@@ -40,13 +40,13 @@ export default function TracksSection() {
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-l from-[#0EA5E9] to-transparent z-10" />
 
             <motion.div
-              animate={{ x: ["0%", "-100%"] }} // Moves exactly half (since we duplicated 3x)
+              animate={{ x: ["0%", "-450%"] }} // Moves exactly half (since we duplicated 3x)
               whileHover={{ animationPlayState: "paused" }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 10,
+                  duration: 40,
                   ease: "linear",
                 },
               }}

@@ -37,7 +37,7 @@ export default function ApplySection() {
               <Link
                 href="https://forms.gle/uqiG59Myzw9aa6GGA"
                 target="_blank"
-                className="otondo-primary-btn py-4 px-8 text-lg font-medium w-full md:w-auto text-center"
+                className="otondo-primary-btn py-4 px-8 rounded-none text-lg font-medium w-full md:w-auto text-center"
               >
                 <span className="otondo-primary-btn font-medium">
                   Apply Now

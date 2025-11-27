@@ -226,4 +226,61 @@ export const tracks = [
     image: "/tracks/cybersecurity.jpg",
     alt: "Cybersecurity"
   },
+
+  { 
+    id: 9, 
+    title: "Data Analysis", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/data-analysis.jpg",
+    alt: "Data Analysis"
+  },
+  { 
+    id: 10, 
+    title: "Project Management", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/project-management.jpg",
+    alt: "Project Management"
+  },
+  { 
+    id: 11, 
+    title: "Python Programming", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/python-programming.jpg",
+    alt: "Python Programming"
+  }
 ];
+
+export const steps = [
+  {
+    number: "1",
+    title: "Fill the application form",
+    description: "Provide your name, email, phone number, and preferred track.",
+  },
+  {
+    number: "2",
+    title: "Upload required details",
+    description: "Share any additional information needed for verification.",
+  },
+  {
+    number: "3",
+    title: "Confirm your contact details",
+    description: "Ensure your communication info is accurate so our team can reach you.",
+  },
+  {
+    number: "4",
+    title: "Submit & receive confirmation",
+    description: "Check your email for a confirmation message and next steps.",
+  },
+  {
+    number: "5",
+    title: "Screening & selection",
+    description: "Applicants are evaluated based on motivation and aptitude.",
+  },
+  {
+    number: "6",
+    title: "Onboarding & orientation",
+    description: "Receive your orientation date and access to your class materials.",
+  },
+];
+
+
