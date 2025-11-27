@@ -170,13 +170,60 @@ export const testimonials = [
 ]
 
 export const tracks = [
-  { id: 1, title: "Machine Learning", duration: "Course Duration: 2hr 30 min" },
-  { id: 2, title: "Data Science", duration: "Course Duration: 2hr 30 min" },
-  { id: 3, title: "Graphic Design", duration: "Course Duration: 2hr 30 min" },
-  { id: 4, title: "AI / Machine Learning", duration: "Course Duration: 2hr 30 min" },
-  { id: 5, title: "Content Creation", duration: "Course Duration: 2hr 30 min" },
-  { id: 6, title: "Full-Stack Development", duration: "Course Duration: 2hr 30 min" },
-  { id: 7, title: "UI/UX Design", duration: "Course Duration: 2hr 30 min" },
-  { id: 8, title: "Digital Marketing", duration: "Course Duration: 2hr 30 min" },
-  { id: 9, title: "Cybersecurity", duration: "Course Duration: 2hr 30 min" },
-]
+  { 
+    id: 1, 
+    title: "Data Science", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/data-science.jpg",
+    alt: "Data Science"
+  },
+  { 
+    id: 2, 
+    title: "Graphic Design", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/graphic-design.jpg",
+    alt: "Graphic Design"
+  },
+  { 
+    id: 3, 
+    title: "AI / Machine Learning", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/ai-machine-learning.jpg",
+    alt: "AI and Machine Learning"
+  },
+  { 
+    id: 4, 
+    title: "Content Creation", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/content-creation.jpg",
+    alt: "Content Creation"
+  },
+  { 
+    id: 5, 
+    title: "Full-Stack Development", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/full-stack-development.jpg",
+    alt: "Full-Stack Development"
+  },
+  { 
+    id: 6, 
+    title: "UI/UX Design", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/ui-ux-design.jpg",
+    alt: "UI/UX Design"
+  },
+  { 
+    id: 7, 
+    title: "Digital Marketing", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/digital-marketing.jpg",
+    alt: "Digital Marketing"
+  },
+  { 
+    id: 8, 
+    title: "Cybersecurity", 
+    duration: "Course Duration: 2hr 30 min",
+    image: "/tracks/cybersecurity.jpg",
+    alt: "Cybersecurity"
+  },
+];

@@ -44,7 +44,9 @@ export default function Navigation() {
 
           {/* Desktop CTA Button - Changed from md: to lg: */}
           <div className="hidden lg:block">
-            <button className="otondo-primary-btn font-medium ">Apply Now</button>
+            <Link href="https://forms.gle/uqiG59Myzw9aa6GGA" target="_blank">
+              <span className="otondo-primary-btn font-medium">Apply Now</span>
+            </Link>
           </div>
 
           {/* Mobile Menu Button - Now shows on <lg (below 1024px) */}

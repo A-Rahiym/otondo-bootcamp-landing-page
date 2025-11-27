@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 export default function ApplySection() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 otondo-blue-section bg-white">
@@ -33,10 +34,15 @@ export default function ApplySection() {
                 instructors who guide you, and a structure designed for your
                 success.
               </p>
-
-              <button className="otondo-primary-btn py-4 px-8 text-lg font-medium w-full md:w-auto text-center">
-                Apply Now
-              </button>
+              <Link
+                href="https://forms.gle/uqiG59Myzw9aa6GGA"
+                target="_blank"
+                className="otondo-primary-btn py-4 px-8 text-lg font-medium w-full md:w-auto text-center"
+              >
+                <span className="otondo-primary-btn font-medium">
+                  Apply Now
+                </span>
+              </Link>
             </div>
           </div>
         </motion.div>

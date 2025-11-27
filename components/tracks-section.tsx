@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { tracks } from "@/data/data";
-
+import Image from "next/image";
 // Duplicate tracks enough for seamless infinite scroll (3x is perfect)
 const duplicatedTracks = [...tracks, ...tracks, ...tracks];
 
@@ -59,10 +59,13 @@ export default function TracksSection() {
                 >
                   <div className="group h-[90%] bg-white border-4 border-[#0EA5E9] overflow-hidden transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl">
                     {/* Track Image Placeholder */}
-                    <div className="h-46 sm:h-46 md:h-46 bg-[#E0F2FE] flex items-center justify-center border-b-4 border-[#0EA5E9]">
-                      <span className="text-3xl md:text-7xl font-medium text-[#1e3a8a] opacity-20 tracking-tighter">
-                        {track.title.split(" ")[0]}
-                      </span>
+                    <div className="h-46 sm:h-46 md:h-46 bg-[#E0F2FE] flex items-center justify-center border-b-4 border-[#0EA5E9] relative overflow-hidden">
+                      <Image
+                        src={track.image}
+                        alt={track.title}
+                        fill
+                        className="object-cover opacity-70"
+                      />
                     </div>
 
                     {/* Track Info */}
