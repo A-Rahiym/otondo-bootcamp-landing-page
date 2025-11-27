@@ -25,7 +25,7 @@ export default function BootcampStructure() {
   ];
 
   return (
-    <section className="relative bg-[#F4F4F4] pt-12 pb-22 overflow-hidden">
+    <section className="relative bg-[#F4F4F4] pt-12 pb-22 overflow-hidden" id="program">
       {/* --- CONTENT WRAPPER --- */}
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         

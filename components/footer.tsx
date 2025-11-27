@@ -55,14 +55,14 @@ export default function Footer() {
           </div>
 
           {/* Programs */}
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-4">Programs</h4>
             <ul className="space-y-2 text-[#F4F4F4]">
               {programs.map((program) => (
                 <li key={program}>{program}</li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact */}
           <div>

@@ -36,17 +36,17 @@ export default function TracksSection() {
           {/* Infinite Carousel Container */}
           <div className="relative overflow-hidden">
             {/* Optional Fade Edges */}
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#0EA5E9] to-transparent z-10" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#0EA5E9] to-transparent z-10" />
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-r from-[#0EA5E9] to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-l from-[#0EA5E9] to-transparent z-10" />
 
             <motion.div
-              animate={{ x: ["0%", "-90%"] }} // Moves exactly half (since we duplicated 3x)
+              animate={{ x: ["0%", "-100%"] }} // Moves exactly half (since we duplicated 3x)
               whileHover={{ animationPlayState: "paused" }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 60,
+                  duration: 30,
                   ease: "linear",
                 },
               }}
@@ -57,22 +57,22 @@ export default function TracksSection() {
                   key={`${track.id}-${index}`}
                   className="shrink-0 flex-none w-[260px] sm:w-[280px] md:w-[300px] lg:w-[320px]"
                 >
-                  <div className="group h-full bg-white rounded-2xl border-4 border-[#0EA5E9] overflow-hidden transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl">
+                  <div className="group h-[90%] bg-white border-4 border-[#0EA5E9] overflow-hidden transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl">
                     {/* Track Image Placeholder */}
-                    <div className="h-52 sm:h-56 md:h-60 bg-[#E0F2FE] flex items-center justify-center border-b-4 border-[#0EA5E9]">
-                      <span className="text-6xl md:text-7xl font-extrabold text-[#1e3a8a] opacity-20 tracking-tighter">
+                    <div className="h-46 sm:h-46 md:h-46 bg-[#E0F2FE] flex items-center justify-center border-b-4 border-[#0EA5E9]">
+                      <span className="text-3xl md:text-7xl font-medium text-[#1e3a8a] opacity-20 tracking-tighter">
                         {track.title.split(" ")[0]}
                       </span>
                     </div>
 
                     {/* Track Info */}
-                    <div className="p-6 md:p-8 bg-white">
-                      <h3 className="text-xl sm:text-2xl md:text-2xl font-bold text-[#1e3a8a] mb-3 line-clamp-2">
+                    <div className="p-3 md:p-3 bg-white">
+                      <h3 className="text-xl sm:text-xl md:text-xl font-bold text-[#1e3a8a] mb-3 line-clamp-2">
                         {track.title}
                       </h3>
-                      <p className="text-[#1e3a8a]/70 font-semibold text-lg">
+                      {/* <p className="text-[#1e3a8a]/70 font-semibold text-lg">
                         {track.duration}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </div>
