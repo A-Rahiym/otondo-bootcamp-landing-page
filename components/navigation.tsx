@@ -18,11 +18,11 @@ export default function Navigation() {
 
   return (
     <nav className="otondo-nav sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-2 sm:px-1 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-1 lg:px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Image
-            src={"/LogoxMonogram.png"}
+            src={"/logox1.svg"}
             alt={"Otondo Bootcamp Logo"}
             width={200}
             height={100}

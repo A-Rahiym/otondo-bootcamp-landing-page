@@ -18,7 +18,7 @@ export default function Home() {
       <TracksSection />
       <ProgramDetailsSection />
       <ProcessSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <ApplySection />
       <FaqSection />
       <Footer />

@@ -40,20 +40,8 @@ const metadata: Metadata = {
   title: "Otondo Bootcamp - A Fresh Start for Your Tech Career",
   description:
     "Join Otondo Bootcamp for an intensive, multi-track coding bootcamp designed to give you practical skills and support for a successful tech journey.",
-  generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/Logo.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/Logo.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-icon.png",
+    icon:{ url: "/icon.svg", type: "image/svg+xml" },
   },
 };
 

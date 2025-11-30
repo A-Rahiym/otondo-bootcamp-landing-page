@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer components {
+  /* Define a component class that applies the required property */
+  .faq-answer-text {
+    white-space: pre-wrap;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

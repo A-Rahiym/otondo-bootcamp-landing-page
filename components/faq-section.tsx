@@ -72,7 +72,7 @@ export default function FaqSection() {
                     className="overflow-hidden"
                   >
                     <div className="pl-7 pr-12 pt-4 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed faq-answer-text">
                         {faq.answer}
                       </p>
                     </div>
