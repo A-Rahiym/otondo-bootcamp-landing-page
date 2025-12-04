@@ -45,7 +45,9 @@ export default function Navigation() {
           {/* Desktop CTA Button - Changed from md: to lg: */}
           <div className="hidden lg:block">
             <Link href="https://forms.gle/uqiG59Myzw9aa6GGA" target="_blank">
-              <span className="otondo-primary-btn font-medium rounded-none ">Apply Now</span>
+              <span className="otondo-primary-btn font-medium rounded-none">
+                Apply Now
+              </span>
             </Link>
           </div>
 
@@ -74,7 +76,9 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <button className="otondo-primary-btn w-full">Apply Now</button>
+              <Link href="https://forms.gle/uqiG59Myzw9aa6GGA" target="_blank">
+                <button className="otondo-primary-btn w-full rounded-none">Apply Now</button>
+              </Link>
             </div>
           </div>
         )}
