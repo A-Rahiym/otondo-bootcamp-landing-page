@@ -144,13 +144,13 @@ export const tracks = [
     image: "/tracks/ai-machine-learning.jpg",
     alt: "AI and Machine Learning"
   },
-  { 
-    id: 4, 
-    title: "Content Creation", 
-    duration: "Course Duration: 2hr 30 min",
-    image: "/tracks/content-creation.jpg",
-    alt: "Content Creation"
-  },
+  // { 
+  //   id: 4, 
+  //   title: "Content Creation", 
+  //   duration: "Course Duration: 2hr 30 min",
+  //   image: "/tracks/content-creation.jpg",
+  //   alt: "Content Creation"
+  // },
   { 
     id: 5, 
     title: "Full-Stack Development", 
