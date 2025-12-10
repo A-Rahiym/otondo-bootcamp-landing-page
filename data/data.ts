@@ -120,8 +120,6 @@ export const testimonials = [
   }
 ]
 
-
-
 export const tracks = [
   { 
     id: 1, 
